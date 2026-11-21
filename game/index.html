@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Scenes — Spot the Difference</title>
+<meta name="description" content="Twin Scenes: a spot-the-difference game with four hand-drawn scenes. Find every change between two pictures before the timer runs out.">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header id="hud">
+  <div class="brand">Twin Scenes <span class="tag">spot the difference</span></div>
+  <div class="hud-item"><span class="hud-label">Level</span><span id="levelLabel">1 / 4</span></div>
+  <div class="hud-item"><span class="hud-label">Scene</span><span id="sceneLabel">Sunny Harbor</span></div>
+  <div class="hud-item big"><span class="hud-label">Differences left</span><span id="remaining">6</span></div>
+  <div class="hud-item big"><span class="hud-label">Time</span><span id="timer">2:00</span></div>
+  <div class="hud-item"><span class="hud-label">Score</span><span id="score">0</span></div>
+  <button id="hintBtn" type="button" title="Hint (H) — costs 10 seconds">Hint</button>
+</header>
+<main id="boards">
+  <figure class="panel">
+    <canvas id="left" width="560" height="420" aria-label="Left picture"></canvas>
+    <figcaption>Picture A — the original</figcaption>
+  </figure>
+  <div id="versus" aria-hidden="true">VS</div>
+  <figure class="panel">
+    <canvas id="right" width="560" height="420" aria-label="Right picture"></canvas>
+    <figcaption>Picture B — spot what changed</figcaption>
+  </figure>
+</main>
+<div id="banner" role="status" aria-live="polite">Click a difference in either picture. Find them all before time runs out!</div>
+<footer id="foot">
+  <span>Mouse: click a difference &nbsp;·&nbsp; H: hint (−10s) &nbsp;·&nbsp; R: restart level &nbsp;·&nbsp; Enter: continue</span>
+  <span id="levelDots" aria-label="Level progress"></span>
+</footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
